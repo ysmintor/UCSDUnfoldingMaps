@@ -105,10 +105,34 @@ public class EarthquakeCityMap extends PApplet {
 	// TODO: Implement this method and call it from setUp, if it helps
 	private SimplePointMarker createMarker(PointFeature feature) {
 		// finish implementing and use this method, if it helps.
+
+//		Minor earthquakes (less than magnitude 4.0) will have blue markers and be small.
+//		Light earthquakes (between 4.0-4.9) will have yellow markers and be medium.
+//		Moderate and higher earthquakes (5.0 and over) will have red markers and be largest.
 		SimplePointMarker simplePointMarker = new SimplePointMarker(feature.getLocation());
-		int myColor = color(100, 120, 200);
-		simplePointMarker.setColor(myColor);
-		simplePointMarker.setRadius(10);
+		Object magObj = feature.getProperty("magnitude");
+		float mag = Float.parseFloat(magObj.toString());
+		if( mag < 4.0 )
+		{
+			int myColor = color(0, 0, 255);
+			simplePointMarker.setColor(myColor);
+			simplePointMarker.setRadius(5);
+		}
+		else if( mag >= 4.0 && mag <= 4.9)
+		{
+			int myColor = color(255, 255, 0);
+			simplePointMarker.setColor(myColor);
+			simplePointMarker.setRadius(10);
+		}
+		else
+		{
+			int myColor = color(255, 0, 0);
+			simplePointMarker.setColor(myColor);
+			simplePointMarker.setRadius(15);
+		}
+//		int myColor = color(100, 120, 200);
+//		simplePointMarker.setColor(myColor);
+//		simplePointMarker.setRadius(10);
 		return simplePointMarker;
 	}
 
