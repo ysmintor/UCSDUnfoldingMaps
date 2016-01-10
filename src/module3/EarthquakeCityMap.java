@@ -130,9 +130,6 @@ public class EarthquakeCityMap extends PApplet {
 			simplePointMarker.setColor(myColor);
 			simplePointMarker.setRadius(15);
 		}
-//		int myColor = color(100, 120, 200);
-//		simplePointMarker.setColor(myColor);
-//		simplePointMarker.setRadius(10);
 		return simplePointMarker;
 	}
 
