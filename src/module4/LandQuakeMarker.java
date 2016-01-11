@@ -34,19 +34,7 @@ public class LandQuakeMarker extends EarthquakeMarker {
 
 		// TODO: Implement this method
 
-		float mag = this.getMagnitude();
-		if( mag < 4.0 )
-		{
-			pg.ellipse(x, y, 5, 5);
-		}
-		else if( mag >= 4.0 && mag <= 4.9)
-		{
-			pg.ellipse(x, y, 10, 10);
-		}
-		else
-		{
-			pg.ellipse(x, y, 15, 15);
-		}
+		pg.ellipse(x, y, 2*radius, 2*radius);
 	}
 
 

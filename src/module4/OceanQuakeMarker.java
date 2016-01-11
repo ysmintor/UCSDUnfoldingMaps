@@ -31,19 +31,7 @@ public class OceanQuakeMarker extends EarthquakeMarker {
 
 		// TODO: Implement this method
 
-		float mag = this.getMagnitude();
-		if( mag < 4.0 )
-		{
-			pg.rect(x, y, 5, 5);
-		}
-		else if( mag >= 4.0 && mag <= 4.9)
-		{
-			pg.rect(x, y, 10, 10);
-		}
-		else
-		{
-			pg.rect(x, y, 15, 15);
-		}
+		pg.rect(x-radius, y-radius, 2*radius, 2*radius);
 	}
 
 
